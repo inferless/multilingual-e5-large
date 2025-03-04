@@ -1,8 +1,12 @@
+import os
+os.environ["HF_HUB_ENABLE_HF_TRANSFER"]='1'
+from huggingface_hub import snapshot_download
 from transformers import AutoTokenizer, AutoModel
 import torch
 
 class InferlessPythonModel:
     def initialize(self):
+        snapshot_download(repo_id='intfloat/multilingual-e5-large',allow_patterns=["*.safetensors"])
         self.tokenizer = AutoTokenizer.from_pretrained('intfloat/multilingual-e5-large')
         self.model = AutoModel.from_pretrained('intfloat/multilingual-e5-large').to("cuda")
 
