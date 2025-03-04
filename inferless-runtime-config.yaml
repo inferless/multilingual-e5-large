@@ -5,4 +5,5 @@ build:
   python_packages:
     - "transformers==4.39.3"
     - "torch==2.2.2"
-    - "huggingface-hub==0.25.2"
+    - "hf-transfer==0.1.9"
+    - "huggingface-hub==0.29.1"
